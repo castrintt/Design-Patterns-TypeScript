@@ -13,5 +13,3 @@ class Vehicles {
     }
 }
 exports.default = Vehicles;
-class Car extends Vehicles {
-}

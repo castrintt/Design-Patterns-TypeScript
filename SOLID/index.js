@@ -10,6 +10,8 @@ const Motorcicle_1 = __importDefault(require("./OpenClose [O]/Motorcicle/Motorci
 const TypeVehicle_1 = require("./OpenClose [O]/TypeVehicle/TypeVehicle");
 const Credito_1 = __importDefault(require("./[L]Liskov/Credito/Credito"));
 const Debito_1 = __importDefault(require("./[L]Liskov/Debito/Debito"));
+const Car_2 = __importDefault(require("./[I] Segrega\u00E7\u00E3o de interfaces/Car/Car"));
+const Motorcycle_1 = __importDefault(require("./[I] Segrega\u00E7\u00E3o de interfaces/MotorCycle/Motorcycle"));
 // Princípios de programação --> SOLID
 // Oq é um princípio de programação -> uma verdade básica universal que não muda
 // Essa verdade é responsável por criar leis e padrões
@@ -53,3 +55,9 @@ const debit = new Debito_1.default();
 // criamos uma classe abstrata e com 2 métodos e logo depois criamos outras 2 classes que herdam dessa classe abstrata, implementando os mesmos métodos existentes na classe abstrata e ainda mais aplicando conceito de polimorfismo, onde em cada uma o método se comporta de modo diferente
 // se trocarmos a classe abstrata para alguma das 2 que herdaram dela o tratamento vai ser o msm, o resultado final tbm
 // com isso aplicamos Liskov
+//             [I] Interface Segregation principle
+// classes não devem ser forçadas a depender de métodos que não usam
+const newCarTest = new Car_2.default("branco", 4, 4, 4);
+newCarTest.startVehicle();
+const newMoto = new Motorcycle_1.default("breta", 2, 2);
+//criamos 2 interfaces especializadas uma somente para o carro e uma somente para a moto, implementamos as 2 em outras 2 classes carro e moto

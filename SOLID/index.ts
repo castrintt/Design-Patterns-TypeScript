@@ -6,6 +6,9 @@ import { TypeVehicle } from "./OpenClose [O]/TypeVehicle/TypeVehicle";
 import Vehicles from "./OpenClose [O]/Vehicles";
 import Credito from "./[L]Liskov/Credito/Credito";
 import Debito from "./[L]Liskov/Debito/Debito";
+import CarIPrinciple from "./[I] Segregação de interfaces/Car/Car";
+import MotorcycleIPrinciple from "./[I] Segregação de interfaces/MotorCycle/Motorcycle";
+import PaymentSystem from "./[D] DependencyInversion/Payment/Payment";
 
 // Princípios de programação --> SOLID
 
@@ -74,3 +77,21 @@ const debit = new Debito();
 // se trocarmos a classe abstrata para alguma das 2 que herdaram dela o tratamento vai ser o msm, o resultado final tbm
 
 // com isso aplicamos Liskov
+
+//                  [I] Interface Segregation principle
+
+// classes não devem ser forçadas a depender de métodos que não usam
+
+const newCarTest = new CarIPrinciple("branco", 4, 4, 4);
+newCarTest.startVehicle();
+const newMoto = new MotorcycleIPrinciple("breta", 2, 2);
+
+//criamos 2 interfaces especializadas uma somente para o carro e uma somente para a moto, implementamos as 2 em outras 2 classes carro e moto
+
+//                  [D] Dependency inversion principle
+
+// módulos de alto nível não devem depender de módulos de baixo nível. Ambos devem depender de abstrações, abstrações não devem depender de detalhes
+
+const payment = new PaymentSystem();
+
+payment.pay(250);
